@@ -1,29 +1,27 @@
 <template>
-  <div class="hello"></div>
+  <div class="hello">
+    <BaseCheckboxGroup @check="checkSticker" />
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import BaseCheckboxGroup from "@/components/BaseChechboxGroup.vue";
 
-@Component
+@Component({
+  components: {
+    BaseCheckboxGroup,
+  },
+})
 export default class CheckoutForm extends Vue {
   @Prop() private msg!: string;
+
+  checkedStickers: string[] = [];
+
+  checkSticker(checkedStickers: string[]): void {
+    this.checkedStickers = checkedStickers;
+  }
 }
 </script>
 
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
