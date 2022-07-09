@@ -30,7 +30,7 @@ export default class BaseTextarea extends Vue {
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .base-textarea-textarea {
@@ -47,8 +47,6 @@ export default class BaseTextarea extends Vue {
   color: #495048;
   font-size: var(--font-size-input-field);
   padding: 10px 10px;
-
-  font-family: "Poppins", sans-serif;
 }
 
 .base-textarea-textarea:focus {
