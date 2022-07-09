@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import CheckoutForm from "@/components/CheckoutForm.vue";
+import CheckoutForm from "@/layout/CheckoutForm.vue";
 
 @Component({
   components: {

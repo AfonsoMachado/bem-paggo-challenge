@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import CheckoutForm from "@/components/CheckoutForm.vue";
+import CheckoutForm from "@/layout/CheckoutForm.vue";
 
 describe("CheckoutForm.vue", () => {
   it("renders props.msg when passed", () => {
