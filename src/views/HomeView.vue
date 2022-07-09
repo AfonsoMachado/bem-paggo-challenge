@@ -5,7 +5,7 @@
       class="bem-paggo-logo"
       src="../assets/img/logo-bem-paggo.png"
     />
-    <CheckoutForm msg="Welcome to Your Vue.js + TypeScript App" />
+    <router-view />
   </div>
 </template>
 
@@ -26,11 +26,11 @@ export default class HomeView extends Vue {}
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  height: 100%;
 }
 
 .checkout-form-wrapper .bem-paggo-logo {
   width: 450px;
+
+  max-width: 100%;
 }
 </style>

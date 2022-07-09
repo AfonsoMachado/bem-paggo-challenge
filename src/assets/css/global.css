@@ -1,23 +1,16 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Sora", sans-serif;
+html,
+body {
+  overflow-x: hidden;
 }
-
-*:focus {
-  outline: none;
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
-  width: 100%;
-  position: relative;
-  height: 100vh;
-
-  background-color: #fafafa;
-  overflow: hidden;
+  margin: 0;
 }
 
 .form-components-title {
@@ -25,4 +18,13 @@ body {
   padding-left: 10px;
   margin-bottom: 8px;
   font-weight: 600;
+}
+
+*::-webkit-scrollbar {
+  width: 11px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c8c8c8;
+  border-radius: 2em;
 }
