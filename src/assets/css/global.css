@@ -19,3 +19,10 @@ body {
   background-color: #fafafa;
   overflow: hidden;
 }
+
+.form-components-title {
+  color: #000;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}

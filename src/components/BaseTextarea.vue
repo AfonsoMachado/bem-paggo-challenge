@@ -1,12 +1,12 @@
 <template>
   <div class="base-textarea-panel">
-    <div class="base-textarea-title">{{ title }}</div>
+    <div class="form-components-title">{{ title }}</div>
     <textarea
       class="base-textarea-textarea"
       @input="$emit('input', $event.target.value)"
       :value="value"
-      :rows="rows"
       :disabled="isDisabled"
+      :placeholder="placeholder"
     ></textarea>
   </div>
 </template>
@@ -18,9 +18,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class BaseTextarea extends Vue {
   @Prop() value?: string;
   @Prop() title?: string;
+  @Prop() placeholder?: string;
   @Prop({ default: false }) isDisabled?: boolean;
-
-  @Prop({ default: 3 }) rows?: number;
 }
 </script>
 
@@ -37,9 +36,10 @@ export default class BaseTextarea extends Vue {
 .base-textarea-textarea {
   outline: none;
   width: 100%;
+  height: 100px;
 
-  background: #f9f9f9;
-  border: 1px solid #b4b4b4;
+  background: #dde3e8;
+  border: 1px solid #2f3676;
   box-sizing: border-box;
   border-radius: 6px;
   resize: none;
@@ -51,15 +51,8 @@ export default class BaseTextarea extends Vue {
   font-family: "Poppins", sans-serif;
 }
 
-.base-textarea-title {
-  color: #000;
-  padding-left: 10px;
-  margin-bottom: 8px;
-  font-weight: 400;
-}
-
 .base-textarea-textarea:focus {
   border: 1px solid black;
-  background: #ffffff;
+  background: #eff8ff;
 }
 </style>
