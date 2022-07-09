@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="checkout-form-wrapper">
+    <img alt="bem paggo logo" src="../assets/img/logo-bem-paggo.png" />
+    <CheckoutForm msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import CheckoutForm from "@/components/CheckoutForm.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    CheckoutForm,
   },
 })
 export default class HomeView extends Vue {}
