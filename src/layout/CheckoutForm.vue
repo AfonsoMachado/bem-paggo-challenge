@@ -24,8 +24,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import BaseCheckboxGroup from "@/components/BaseChechboxGroup.vue";
+import { Component, Vue } from "vue-property-decorator";
+import BaseCheckboxGroup from "@/components/BaseCheckboxGroup.vue";
 import BaseTextarea from "@/components/BaseTextarea.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
@@ -40,8 +40,6 @@ import { SelectOption } from "@/types/SelectOption";
   },
 })
 export default class CheckoutForm extends Vue {
-  @Prop() private msg!: string;
-
   checkedStickers: string[] = [];
   stickersQuantity = 0;
   comments = "";
