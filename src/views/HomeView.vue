@@ -11,11 +11,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import CheckoutForm from "@/layout/CheckoutForm.vue";
+import PurchaseForm from "@/layout/PurchaseForm.vue";
 
 @Component({
   components: {
-    CheckoutForm,
+    PurchaseForm,
   },
 })
 export default class HomeView extends Vue {}

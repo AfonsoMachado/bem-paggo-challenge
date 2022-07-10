@@ -18,7 +18,7 @@
     </div>
 
     <div class="send-data">
-      <button @click="sendData">Enviar</button>
+      <button class="send-data-btn" @click="sendData">Enviar</button>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ import { SelectOption } from "@/types/SelectOption";
     PaymentMethod,
   },
 })
-export default class CheckoutForm extends Vue {
+export default class PurchaseForm extends Vue {
   checkedStickers: string[] = [];
   stickersQuantity = 0;
   comments = "";

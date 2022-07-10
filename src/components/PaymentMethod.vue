@@ -4,6 +4,7 @@
     <div class="payment-method-content">
       <div
         class="payment-item"
+        :id="index"
         :class="
           selectedPaymentMethod && selectedPaymentMethod.value === item.value
             ? 'selected'

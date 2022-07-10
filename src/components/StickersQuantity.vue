@@ -7,12 +7,19 @@
       <img
         src="../assets/img/minus.png"
         alt="minus-icon"
+        class="minus-icon"
         @click="decreaseStickersQuantity"
       />
-      <input type="number" disabled :value="stickersQuantity" />
+      <input
+        class="stickers-quantity-input"
+        type="number"
+        disabled
+        :value="stickersQuantity"
+      />
       <img
         src="../assets/img/plus.png"
         alt="plus-icon"
+        class="plus-icon"
         @click="increaseStickersQuantity"
       />
     </div>

@@ -1,12 +1,12 @@
 import { shallowMount } from "@vue/test-utils";
-import CheckoutForm from "@/layout/CheckoutForm.vue";
+import PurchaseForm from "@/layout/PurchaseForm.vue";
 import BaseCheckboxGroup from "@/components/BaseCheckboxGroup.vue";
 import BaseTextarea from "@/components/BaseTextarea.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 
-describe("CheckoutForm.vue", () => {
-  const wrapper = shallowMount(CheckoutForm);
+describe("PurchaseForm.vue", () => {
+  const wrapper = shallowMount(PurchaseForm);
 
   test("does a wrapper exist", () => {
     expect(wrapper.exists()).toBe(true);

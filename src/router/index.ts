@@ -10,9 +10,14 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/HomeView.vue"),
     children: [
       {
+        path: "/select",
+        name: "select",
+        component: () => import("../layout/PurchaseForm.vue"),
+      },
+      {
         path: "/checkout",
         name: "checkout",
-        component: () => import("../layout/CheckoutForm.vue"),
+        component: () => import("../layout/PurchaseForm.vue"),
       },
     ],
   },
