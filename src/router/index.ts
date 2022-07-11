@@ -19,6 +19,11 @@ const routes: Array<RouteConfig> = [
         name: "checkout",
         component: () => import("../layout/CheckoutPage.vue"),
       },
+      {
+        path: "/thanks",
+        name: "thanks",
+        component: () => import("../layout/ThanksPage.vue"),
+      },
     ],
   },
 ];

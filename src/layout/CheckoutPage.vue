@@ -54,7 +54,9 @@
         Voltar
       </button>
 
-      <button class="send-data-btn">Comprar</button>
+      <button class="send-data-btn" @click="goToRoute('/thanks')">
+        Comprar
+      </button>
     </div>
   </div>
 </template>
