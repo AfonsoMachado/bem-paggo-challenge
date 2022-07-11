@@ -35,6 +35,7 @@ import BaseTextarea from "@/components/BaseTextarea.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
 import { SelectOption } from "@/types/SelectOption";
+import { PurchaseData } from "@/types/PurchaseData";
 
 const StickersStore = namespace("StickersStore");
 
@@ -58,6 +59,9 @@ export default class PurchaseForm extends Vue {
 
   @StickersStore.Mutation
   private setComments!: (comments: string) => void;
+
+  @StickersStore.Getter
+  private purchase!: PurchaseData;
 
   checkedStickers: string[] = [];
   stickersQuantity = 0;
@@ -92,6 +96,12 @@ export default class PurchaseForm extends Vue {
       this.paymentMethod !== null
       ? true
       : false;
+  }
+
+  mounted() {
+    this.comments = this.purchase.comments;
+    this.paymentMethod = this.purchase.paymentMethod;
+    this.stickersQuantity = this.purchase.stickersQuantity;
   }
 }
 </script>

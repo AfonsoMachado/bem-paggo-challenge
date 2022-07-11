@@ -27,10 +27,17 @@
 </template>
 
 <script lang="ts">
+import { PurchaseData } from "@/types/PurchaseData";
+import { namespace } from "vuex-class";
 import { Component, Prop, Vue } from "vue-property-decorator";
+
+const StickersStore = namespace("StickersStore");
 
 @Component
 export default class StickersQuantity extends Vue {
+  @StickersStore.Getter
+  private purchase!: PurchaseData;
+
   @Prop() title?: string;
 
   stickersQuantity = 0;
@@ -49,6 +56,10 @@ export default class StickersQuantity extends Vue {
 
   emitChangedStickersQuantity(): void {
     this.$emit("input", this.stickersQuantity);
+  }
+
+  mounted() {
+    this.stickersQuantity = this.purchase.stickersQuantity;
   }
 }
 </script>

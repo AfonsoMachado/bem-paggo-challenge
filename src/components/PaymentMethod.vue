@@ -26,11 +26,18 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { namespace } from "vuex-class";
 import { PaymentMethods } from "@/utils/Constants";
 import { SelectOption } from "@/types/SelectOption";
+import { PurchaseData } from "@/types/PurchaseData";
+
+const StickersStore = namespace("StickersStore");
 
 @Component
 export default class PaymentMethod extends Vue {
+  @StickersStore.Getter
+  private purchase!: PurchaseData;
+
   @Prop() title?: string;
 
   paymentMethods: SelectOption[] = PaymentMethods;
@@ -39,6 +46,10 @@ export default class PaymentMethod extends Vue {
   selectPaymentMethod(payment: SelectOption) {
     this.selectedPaymentMethod = payment;
     this.$emit("select", payment);
+  }
+
+  mounted() {
+    this.selectedPaymentMethod = this.purchase.paymentMethod;
   }
 }
 </script>

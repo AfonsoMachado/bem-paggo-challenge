@@ -21,7 +21,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { namespace } from "vuex-class";
 import PurchaseForm from "@/layout/PurchaseForm.vue";
+
+const StickersStore = namespace("StickersStore");
 
 @Component({
   components: {
@@ -29,12 +32,19 @@ import PurchaseForm from "@/layout/PurchaseForm.vue";
   },
 })
 export default class HomeView extends Vue {
+  @StickersStore.Mutation
+  private resetStore!: () => void;
+
   get currentRouteName() {
     return this.$route.name;
   }
 
   goRoRoute(route: string) {
-    this.$router.push(route);
+    this.$route.name !== route && this.$router.push(route);
+  }
+
+  mounted() {
+    this.resetStore();
   }
 }
 </script>

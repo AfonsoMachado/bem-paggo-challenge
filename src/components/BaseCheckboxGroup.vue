@@ -23,10 +23,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { namespace } from "vuex-class";
 import { StickersOptions } from "@/utils/Constants";
+import { PurchaseData } from "@/types/PurchaseData";
+
+const StickersStore = namespace("StickersStore");
 
 @Component
 export default class BaseCheckboxGroup extends Vue {
+  @StickersStore.Getter
+  private purchase!: PurchaseData;
+
   @Prop() title?: string;
 
   stickersOptions: string[] = StickersOptions;
@@ -35,6 +42,10 @@ export default class BaseCheckboxGroup extends Vue {
   @Watch("checkedStickers")
   emitChangeEvent(): void {
     this.$emit("check", this.checkedStickers);
+  }
+
+  mounted() {
+    this.checkedStickers = this.purchase.checkedStickers;
   }
 }
 </script>
