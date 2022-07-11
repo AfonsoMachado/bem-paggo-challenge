@@ -4,12 +4,12 @@ import { StickersOptions } from "../../../src/utils/Constants";
 
 describe("home test", () => {
   it("test images visible", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.get("img").should("be.visible");
   });
 
   it("test strings", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.contains("Quais adesivos");
     cy.contains("Quantos adesivos de cada?");
     cy.contains("Observações");
@@ -17,12 +17,12 @@ describe("home test", () => {
   });
 
   it("test buttons", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.contains("button", "Enviar");
   });
 
   it("test stickers quantity", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.get(".plus-icon").click().click();
     cy.get('input[class="stickers-quantity-input"]').should("have.value", 2);
 
@@ -31,7 +31,7 @@ describe("home test", () => {
   });
 
   it("test observations textarea", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.get('textarea[class="base-textarea-textarea"]').type("teste");
     cy.get('textarea[class="base-textarea-textarea"]').should(
       "have.value",
@@ -40,7 +40,7 @@ describe("home test", () => {
   });
 
   it("test witch stickers count", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.get("input[type='checkbox']").should(
       "have.length",
       StickersOptions.length
@@ -48,7 +48,7 @@ describe("home test", () => {
   });
 
   it("mark checkboxes", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
 
     const randomNumbers = generateRandomNumberNotRepeat(
       StickersOptions.length,
@@ -63,7 +63,7 @@ describe("home test", () => {
   });
 
   it("test payment methods", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
     cy.get("div[class='payment-item'][id='0']").click();
     cy.get("div[class='payment-item'][id='2']").click();
 
@@ -71,7 +71,7 @@ describe("home test", () => {
   });
 
   it("test general checkout", () => {
-    cy.visit("/checkout");
+    cy.visit("/purchase");
 
     const randomNumbers = generateRandomNumberNotRepeat(
       StickersOptions.length,

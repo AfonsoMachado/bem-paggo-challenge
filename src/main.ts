@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import store from "./store";
 import "@/assets/css/global.css";
 import "@/assets/css/button.css";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -17,5 +18,6 @@ Vue.use(VueSweetalert2, sweetAlertOptions);
 
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app");

@@ -1,5 +1,9 @@
 <template>
   <div class="form-wrapper">
+    <div class="purchase-form-header">
+      <span class="purchase-form-title"> Formulário para compra de </span>
+      <span class="purchase-form-subtitle"> pacote de adesivos </span>
+    </div>
     <div class="form-content">
       <BaseCheckboxGroup @check="checkSticker" :title="'Quais adesivos:'" />
       <StickersQuantity
@@ -13,7 +17,7 @@
       />
       <PaymentMethod
         :title="'Forma de pagamento:'"
-        @select="setPaymentMethod"
+        @select="setLocalPaymentMethod"
       />
     </div>
 
@@ -25,11 +29,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { namespace } from "vuex-class";
 import BaseCheckboxGroup from "@/components/BaseCheckboxGroup.vue";
 import BaseTextarea from "@/components/BaseTextarea.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
 import { SelectOption } from "@/types/SelectOption";
+
+const StickersStore = namespace("StickersStore");
 
 @Component({
   components: {
@@ -40,6 +47,18 @@ import { SelectOption } from "@/types/SelectOption";
   },
 })
 export default class PurchaseForm extends Vue {
+  @StickersStore.Mutation
+  private setStickersQuantity!: (quantity: number) => void;
+
+  @StickersStore.Mutation
+  private setCheckedStickers!: (stickers: string[]) => void;
+
+  @StickersStore.Mutation
+  private setPaymentMethod!: (paymentMethod: SelectOption | null) => void;
+
+  @StickersStore.Mutation
+  private setComments!: (comments: string) => void;
+
   checkedStickers: string[] = [];
   stickersQuantity = 0;
   comments = "";
@@ -49,22 +68,18 @@ export default class PurchaseForm extends Vue {
     this.checkedStickers = checkedStickers;
   }
 
-  setPaymentMethod(payment: SelectOption): void {
+  setLocalPaymentMethod(payment: SelectOption): void {
     this.paymentMethod = payment;
   }
 
   sendData(): void {
-    const checkoutData = {
-      stickers: this.checkedStickers,
-      quantity: this.stickersQuantity,
-      comments: this.comments,
-      paymentMethod: this.paymentMethod,
-    };
-
-    console.log(checkoutData);
-
-    if (this.validateForm()) this.$router.push("/checkout");
-    else
+    if (this.validateForm()) {
+      this.setCheckedStickers(this.checkedStickers);
+      this.setStickersQuantity(this.stickersQuantity);
+      this.setPaymentMethod(this.paymentMethod);
+      this.setComments(this.comments);
+      this.$router.push("/checkout");
+    } else
       this.$swal.fire({
         icon: "warning",
         title: "Preencha todos os campos necessários",
@@ -95,23 +110,8 @@ export default class PurchaseForm extends Vue {
   padding: 30px 30px 0 30px;
 }
 
-.send-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  height: 100px;
-  background-color: #dde3e8;
-
-  border-radius: 0 0 2em 2em;
-}
-
-.send-data button {
-  height: 30px;
-  width: 100px;
-
-  align-self: flex-end;
-  margin-right: 50px;
+.purchase-form-subtitle {
+  font-weight: 600;
 }
 
 @media screen and (max-width: 767px) {
