@@ -6,18 +6,18 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "home",
+    name: "/",
     component: () => import("../views/HomeView.vue"),
     children: [
       {
-        path: "/select",
-        name: "select",
+        path: "/purchase",
+        name: "purchase",
         component: () => import("../layout/PurchaseForm.vue"),
       },
       {
         path: "/checkout",
         name: "checkout",
-        component: () => import("../layout/PurchaseForm.vue"),
+        component: () => import("../layout/CheckoutPage.vue"),
       },
     ],
   },

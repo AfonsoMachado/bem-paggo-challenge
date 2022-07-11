@@ -62,6 +62,21 @@ export default class PurchaseForm extends Vue {
     };
 
     console.log(checkoutData);
+
+    if (this.validateForm()) this.$router.push("/checkout");
+    else
+      this.$swal.fire({
+        icon: "warning",
+        title: "Preencha todos os campos necessários",
+      });
+  }
+
+  validateForm(): boolean {
+    return this.checkedStickers.length !== 0 &&
+      this.stickersQuantity !== 0 &&
+      this.paymentMethod !== null
+      ? true
+      : false;
   }
 }
 </script>
