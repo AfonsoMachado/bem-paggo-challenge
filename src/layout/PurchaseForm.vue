@@ -112,7 +112,7 @@ export default class PurchaseForm extends Vue {
   height: 100%;
 
   background-color: #f2f2f2;
-  border-radius: 2em;
+  border-radius: 40px;
   margin-bottom: 30px;
 }
 

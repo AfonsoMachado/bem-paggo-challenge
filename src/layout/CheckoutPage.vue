@@ -26,7 +26,7 @@
           </span>
         </div>
 
-        <div class="checkout-page-content-body-item">
+        <div class="checkout-page-content-body-item" v-if="purchase.comments">
           <span class="checkout-page-content-body-item-title">
             Observações:
           </span>
@@ -83,7 +83,7 @@ export default class CheckoutPage extends Vue {
   height: 100%;
 
   background-color: #f2f2f2;
-  border-radius: 2em;
+  border-radius: 40px;
   margin-bottom: 30px;
 }
 
