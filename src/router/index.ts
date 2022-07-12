@@ -1,5 +1,6 @@
 import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
+import VueRouter, { Route, RouteConfig } from "vue-router";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,15 @@ const routes: Array<RouteConfig> = [
       {
         path: "/checkout",
         name: "checkout",
+        beforeEnter: (to: Route, from: Route, next: any) => {
+          if (
+            from.name !== "purchase" &&
+            !store.getters["StickersStore/validStore"]
+          ) {
+            next("/");
+          }
+          next();
+        },
         component: () => import("../layout/CheckoutPage.vue"),
       },
       {

@@ -44,6 +44,14 @@ class StickersStore extends VuexModule {
   get purchase(): PurchaseData {
     return this.purchaseData;
   }
+
+  get validStore(): boolean {
+    return (
+      this.purchaseData.checkedStickers.length > 0 &&
+      this.purchaseData.stickersQuantity > 0 &&
+      this.purchaseData.paymentMethod !== null
+    );
+  }
 }
 
 export default StickersStore;

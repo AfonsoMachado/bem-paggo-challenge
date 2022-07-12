@@ -16,7 +16,7 @@ describe("home test", () => {
     cy.contains("Forma de pagamento");
   });
 
-  it("test buttons", () => {
+  it("test buttons purchase", () => {
     cy.visit("/purchase");
     cy.contains("button", "Enviar");
   });
@@ -87,6 +87,13 @@ describe("home test", () => {
     cy.get("div[class='payment-item'][id='2']").click();
 
     cy.get("button[class='send-data-btn']").click();
+
+    cy.contains(`${StickersOptions[randomNumbers[0]]}`);
+    cy.contains(`${StickersOptions[randomNumbers[1]]}`);
+
+    cy.contains("2");
+    cy.contains("teste");
+    cy.contains("Cartão de Débito");
   });
 });
 
