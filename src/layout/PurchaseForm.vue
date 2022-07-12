@@ -21,9 +21,9 @@
       />
     </div>
 
-    <div class="send-data">
+    <SubmitFooter :page="'purchase'">
       <BaseButton class="send-data-btn" @click="sendData"> Enviar </BaseButton>
-    </div>
+    </SubmitFooter>
   </div>
 </template>
 
@@ -35,6 +35,8 @@ import BaseTextarea from "@/components/BaseTextarea.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import SubmitFooter from "@/components/SubmitFooter.vue";
+
 import { SelectOption } from "@/types/SelectOption";
 import { PurchaseData } from "@/types/PurchaseData";
 
@@ -47,6 +49,7 @@ const StickersStore = namespace("StickersStore");
     StickersQuantity,
     PaymentMethod,
     BaseButton,
+    SubmitFooter,
   },
 })
 export default class PurchaseForm extends Vue {

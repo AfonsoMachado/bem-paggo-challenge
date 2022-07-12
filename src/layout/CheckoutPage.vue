@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div class="send-data">
+    <SubmitFooter :page="'checkout'">
       <BaseButton class="send-data-btn" @click="goToRoute('/purchase')">
         Voltar
       </BaseButton>
@@ -57,7 +57,7 @@
       <BaseButton class="send-data-btn" @click="goToRoute('/thanks')">
         Comprar
       </BaseButton>
-    </div>
+    </SubmitFooter>
   </div>
 </template>
 
@@ -65,6 +65,8 @@
 import { PurchaseData } from "@/types/PurchaseData";
 import { Component, Vue } from "vue-property-decorator";
 import BaseButton from "@/components/BaseButton.vue";
+import SubmitFooter from "@/components/SubmitFooter.vue";
+
 import { namespace } from "vuex-class";
 
 const StickersStore = namespace("StickersStore");
@@ -72,6 +74,7 @@ const StickersStore = namespace("StickersStore");
 @Component({
   components: {
     BaseButton,
+    SubmitFooter,
   },
 })
 export default class CheckoutPage extends Vue {
@@ -124,21 +127,8 @@ export default class CheckoutPage extends Vue {
   margin-left: 5px;
 }
 
-.send-data {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .send-data .send-data-btn {
   margin: 0;
   align-self: center;
-}
-
-.send-data .send-data-btn:first-child {
-  margin-left: 50px;
-}
-
-.send-data .send-data-btn:last-child {
-  margin-right: 50px;
 }
 </style>
