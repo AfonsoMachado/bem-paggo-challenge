@@ -22,7 +22,7 @@
     </div>
 
     <div class="send-data">
-      <button class="send-data-btn" @click="sendData">Enviar</button>
+      <BaseButton class="send-data-btn" @click="sendData"> Enviar </BaseButton>
     </div>
   </div>
 </template>
@@ -34,6 +34,7 @@ import BaseCheckboxGroup from "@/components/BaseCheckboxGroup.vue";
 import BaseTextarea from "@/components/BaseTextarea.vue";
 import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
+import BaseButton from "@/components/BaseButton.vue";
 import { SelectOption } from "@/types/SelectOption";
 import { PurchaseData } from "@/types/PurchaseData";
 
@@ -45,6 +46,7 @@ const StickersStore = namespace("StickersStore");
     BaseTextarea,
     StickersQuantity,
     PaymentMethod,
+    BaseButton,
   },
 })
 export default class PurchaseForm extends Vue {

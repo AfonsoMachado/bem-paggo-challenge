@@ -50,13 +50,13 @@
     </div>
 
     <div class="send-data">
-      <button class="send-data-btn" @click="goToRoute('/purchase')">
+      <BaseButton class="send-data-btn" @click="goToRoute('/purchase')">
         Voltar
-      </button>
+      </BaseButton>
 
-      <button class="send-data-btn" @click="goToRoute('/thanks')">
+      <BaseButton class="send-data-btn" @click="goToRoute('/thanks')">
         Comprar
-      </button>
+      </BaseButton>
     </div>
   </div>
 </template>
@@ -64,11 +64,16 @@
 <script lang="ts">
 import { PurchaseData } from "@/types/PurchaseData";
 import { Component, Vue } from "vue-property-decorator";
+import BaseButton from "@/components/BaseButton.vue";
 import { namespace } from "vuex-class";
 
 const StickersStore = namespace("StickersStore");
 
-@Component
+@Component({
+  components: {
+    BaseButton,
+  },
+})
 export default class CheckoutPage extends Vue {
   @StickersStore.Getter
   private purchase!: PurchaseData;

@@ -8,13 +8,13 @@
     />
     <router-view />
     <div class="to-purchase">
-      <button
+      <BaseButton
         class="to-purchase-btn"
         v-if="currentRouteName === '/'"
         @click="goRoRoute('/purchase')"
       >
         Comprar adesivos
-      </button>
+      </BaseButton>
     </div>
   </div>
 </template>
@@ -23,12 +23,14 @@
 import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
 import PurchaseForm from "@/layout/PurchaseForm.vue";
+import BaseButton from "@/components/BaseButton.vue";
 
 const StickersStore = namespace("StickersStore");
 
 @Component({
   components: {
     PurchaseForm,
+    BaseButton,
   },
 })
 export default class HomeView extends Vue {
@@ -63,7 +65,6 @@ export default class HomeView extends Vue {
 }
 
 .to-purchase-btn {
-  width: 100%;
-  height: 30px;
+  width: 200px;
 }
 </style>
