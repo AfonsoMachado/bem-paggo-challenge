@@ -1,9 +1,9 @@
 <template>
   <div class="form-wrapper">
-    <div class="purchase-form-header">
-      <span class="purchase-form-title"> Formulário para compra de </span>
-      <span class="purchase-form-subtitle"> pacote de adesivos </span>
-    </div>
+    <FormHeader>
+      <template v-slot:title>Formulário para compra de</template>
+      <template v-slot:subtitle>pacote de adesivos</template>
+    </FormHeader>
     <div class="form-content">
       <BaseCheckboxGroup @check="checkSticker" :title="'Quais adesivos:'" />
       <StickersQuantity
@@ -36,6 +36,7 @@ import StickersQuantity from "@/components/StickersQuantity.vue";
 import PaymentMethod from "@/components/PaymentMethod.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import SubmitFooter from "@/components/SubmitFooter.vue";
+import FormHeader from "@/components/FormHeader.vue";
 
 import { SelectOption } from "@/types/SelectOption";
 import { PurchaseData } from "@/types/PurchaseData";
@@ -50,6 +51,7 @@ const StickersStore = namespace("StickersStore");
     PaymentMethod,
     BaseButton,
     SubmitFooter,
+    FormHeader,
   },
 })
 export default class PurchaseForm extends Vue {
@@ -123,10 +125,6 @@ export default class PurchaseForm extends Vue {
 
 .form-content {
   padding: 30px 30px 0 30px;
-}
-
-.purchase-form-subtitle {
-  font-weight: 600;
 }
 
 @media screen and (max-width: 767px) {

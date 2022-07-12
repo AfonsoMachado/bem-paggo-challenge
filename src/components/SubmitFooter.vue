@@ -1,6 +1,8 @@
 <template>
-  <div :class="`send-data ${submitFooterClass}`">
-    <slot></slot>
+  <div :class="`send-data`">
+    <div :class="`buttons-wrapper ${submitFooterClass}`">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -27,6 +29,8 @@ export default class SubmitFooter extends Vue {
 <style scoped>
 .send-data {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   background-color: #dde3e8;
   height: 100px;
@@ -42,13 +46,15 @@ export default class SubmitFooter extends Vue {
   align-self: flex-end;
 }
 
+.buttons-wrapper {
+  display: flex;
+}
+
 .btn-purchase {
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .btn-checkout {
-  flex-direction: row;
   justify-content: space-between;
 }
 </style>

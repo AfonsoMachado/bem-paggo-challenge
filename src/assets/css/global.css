@@ -32,26 +32,3 @@ body {
   background-color: #c8c8c8;
   border-radius: 2em;
 }
-
-.purchase-form-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.purchase-form-header {
-  background-color: #2f3676;
-  border-radius: 40px 40px 0 0;
-
-  height: 150px;
-  padding: 0px 30px;
-
-  color: #fff;
-  font-size: 24px;
-
-  text-align: left;
-}
-
-.purchase-form-title {
-  font-weight: 300;
-}

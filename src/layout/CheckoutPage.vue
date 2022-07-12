@@ -1,8 +1,8 @@
 <template>
   <div class="checkout-page-wrapper">
-    <div class="purchase-form-header">
-      <span class="purchase-form-title"> Confirmação de compra </span>
-    </div>
+    <FormHeader>
+      <template v-slot:title>Confirmação de compra</template>
+    </FormHeader>
 
     <div class="checkout-page-content">
       <div class="checkout-page-content-body">
@@ -66,6 +66,7 @@ import { PurchaseData } from "@/types/PurchaseData";
 import { Component, Vue } from "vue-property-decorator";
 import BaseButton from "@/components/BaseButton.vue";
 import SubmitFooter from "@/components/SubmitFooter.vue";
+import FormHeader from "@/components/FormHeader.vue";
 
 import { namespace } from "vuex-class";
 
@@ -75,6 +76,7 @@ const StickersStore = namespace("StickersStore");
   components: {
     BaseButton,
     SubmitFooter,
+    FormHeader,
   },
 })
 export default class CheckoutPage extends Vue {
@@ -128,7 +130,6 @@ export default class CheckoutPage extends Vue {
 }
 
 .send-data .send-data-btn {
-  margin: 0;
   align-self: center;
 }
 </style>
