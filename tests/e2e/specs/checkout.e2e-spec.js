@@ -70,30 +70,83 @@ describe("home test", () => {
     cy.get("div[class='payment-item selected'][id='2']").should("be.visible");
   });
 
-  it("test general checkout", () => {
+  it("test general checkout error - without data", () => {
     cy.visit("/purchase");
+    cy.get("button[class='send-data-btn']").click();
+
+    cy.contains("Preencha todos os campos necessários");
+  });
+
+  it("test general checkout error - with stickers select", () => {
+    cy.visit("/purchase");
+
+    const randomNumbers = generateRandomNumberNotRepeat(
+      StickersOptions.length,
+      1
+    );
+
+    cy.get(`input[id='${randomNumbers[0]}']`).check();
+    cy.get("button[class='send-data-btn']").click();
+
+    cy.contains("Preencha todos os campos necessários");
+  });
+
+  it("test all general checkout", () => {
+    cy.visit("/");
+
+    // Verifica se está na página inicial
+    cy.get("button").contains("Comprar adesivos");
+    // Avança para página de compra
+    cy.get("button").contains("Comprar adesivos").click();
 
     const randomNumbers = generateRandomNumberNotRepeat(
       StickersOptions.length,
       3
     );
 
+    // Seleciona os adesivos
     cy.get(`input[id='${randomNumbers[0]}']`).check();
     cy.get(`input[id='${randomNumbers[1]}']`).check();
-
+    // Seleciona a quantidade
     cy.get(".plus-icon").click().click();
-
+    // Adiciona uma observação
     cy.get('textarea[class="base-textarea-textarea"]').type("teste");
+    // Seleciona a forma de pagamento
     cy.get("div[class='payment-item'][id='2']").click();
 
-    cy.get("button[class='send-data-btn']").click();
+    // Envia os dados
+    cy.get("button[class='send-data-btn']").contains("Enviar").click();
 
+    // Verifica na página de checkout se os adesivos adicionados foram os corretos
     cy.contains(`${StickersOptions[randomNumbers[0]]}`);
     cy.contains(`${StickersOptions[randomNumbers[1]]}`);
-
+    // Verifica a quantidade de adesivos adicionados
     cy.contains("2");
+    // Verifica a observação
     cy.contains("teste");
+    // Verifica a forma de pagamento
     cy.contains("Cartão de Débito");
+
+    // Volta para a página de compra
+    cy.get("button[class='send-data-btn']").contains("Voltar").click();
+    // Seleciona outra forma de pagamento
+    cy.get("div[class='payment-item'][id='1']").click();
+
+    // Envia os dados
+    cy.get("button[class='send-data-btn']").contains("Enviar").click();
+
+    // Verifica a nova forma de pagamento
+    cy.contains("Cartão de Crédito");
+    // Confirma a compra
+    cy.get("button[class='send-data-btn']").contains("Comprar").click();
+
+    // Verifica se está na página de agradecimento
+    cy.contains("Muito obrigado por sua compra!");
+    // Clica no link de voltar para a página inicial
+    cy.get("a").click();
+
+    // Verifica se está na página inicial
+    cy.get("button").contains("Comprar adesivos");
   });
 });
 
