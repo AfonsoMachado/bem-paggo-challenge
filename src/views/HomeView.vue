@@ -31,8 +31,8 @@ export default class HomeView extends Vue {
     this.$route.name !== route && this.$router.push(route);
   }
 
-  mounted() {
-    this.resetStore();
+  beforeUpdate() {
+    this.$route.name === "/" && this.resetStore();
   }
 }
 </script>
