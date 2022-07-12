@@ -9,13 +9,8 @@
     </div>
 
     <SubmitFooter :page="'checkout'">
-      <BaseButton class="send-data-btn" @click="goToRoute('/purchase')">
-        Voltar
-      </BaseButton>
-
-      <BaseButton class="send-data-btn" @click="goToRoute('/thanks')">
-        Comprar
-      </BaseButton>
+      <BaseButton @click="goToRoute('/purchase')"> Voltar </BaseButton>
+      <BaseButton @click="goToRoute('/thanks')"> Comprar </BaseButton>
     </SubmitFooter>
   </FormWrapper>
 </template>
@@ -48,9 +43,5 @@ export default class CheckoutPage extends Vue {
 .checkout-page-content {
   padding: 30px;
   display: flex;
-}
-
-.send-data .send-data-btn {
-  align-self: center;
 }
 </style>

@@ -7,40 +7,25 @@
       @click="goRoRoute('/')"
     />
     <router-view />
-    <div class="to-purchase" v-if="currentRouteName === '/'">
-      <div>
-        Seja bem vindo ao nosso sistema de compra de adesivos
-        <br />
-        Para efetuar sua compra clique no botão abaixo
-      </div>
-      <BaseButton class="to-purchase-btn" @click="goRoRoute('/purchase')">
-        Comprar adesivos
-      </BaseButton>
-    </div>
+    <WelcomeMessage @route="goRoRoute('/purchase')" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
-import PurchaseForm from "@/layout/PurchaseForm.vue";
-import BaseButton from "@/components/BaseButton.vue";
+import WelcomeMessage from "@/components/WelcomeMessage.vue";
 
 const StickersStore = namespace("StickersStore");
 
 @Component({
   components: {
-    PurchaseForm,
-    BaseButton,
+    WelcomeMessage,
   },
 })
 export default class HomeView extends Vue {
   @StickersStore.Mutation
   private resetStore!: () => void;
-
-  get currentRouteName() {
-    return this.$route.name;
-  }
 
   goRoRoute(route: string) {
     this.$route.name !== route && this.$router.push(route);
@@ -63,21 +48,5 @@ export default class HomeView extends Vue {
   width: 450px;
   max-width: 100%;
   cursor: pointer;
-}
-
-.to-purchase {
-  width: 60%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 300px;
-  font-weight: 500;
-  font-size: 30px;
-}
-
-.to-purchase-btn {
-  margin-top: 10px;
-  width: 200px;
 }
 </style>
