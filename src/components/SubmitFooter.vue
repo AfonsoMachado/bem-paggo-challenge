@@ -32,7 +32,7 @@ export default class SubmitFooter extends Vue {
   flex-direction: column;
   justify-content: center;
 
-  background-color: #dde3e8;
+  background-color: var(--background-secondary);
   height: 100px;
   border-radius: 0 0 40px 40px;
 

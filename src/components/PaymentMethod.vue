@@ -97,11 +97,11 @@ export default class PaymentMethod extends Vue {
 }
 
 .payment-item.selected {
-  box-shadow: 0 0 1em #2f3676;
+  box-shadow: 0 0 1em var(--main-indigo);
 }
 
 .payment-item:hover {
-  box-shadow: 0 0 1em #2f3676;
+  box-shadow: 0 0 1em var(--main-indigo);
   transition: box-shadow 0.2s ease-in-out;
 }
 </style>

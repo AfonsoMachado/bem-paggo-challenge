@@ -23,7 +23,7 @@
     </div>
 
     <SubmitFooter :page="'purchase'">
-      <BaseButton class="send-data-btn" @click="sendData"> Enviar </BaseButton>
+      <BaseButton @click="sendData"> Enviar </BaseButton>
     </SubmitFooter>
   </FormWrapper>
 </template>

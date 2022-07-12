@@ -18,10 +18,16 @@ body {
 }
 
 .form-components-title {
-  color: #000;
+  color: var(--main-black);
   padding-left: 10px;
   margin-bottom: 8px;
   font-weight: 600;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
 }
 
 *::-webkit-scrollbar {
@@ -31,10 +37,4 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #c8c8c8;
   border-radius: 2em;
-}
-
-.form-content {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
 }

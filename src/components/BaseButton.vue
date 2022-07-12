@@ -14,7 +14,7 @@ export default class BaseButton extends Vue {}
 <style scoped>
 button {
   text-transform: uppercase;
-  background-color: #2f3676;
+  background-color: var(--main-indigo);
   color: white;
   border: none;
   border-radius: 5px;

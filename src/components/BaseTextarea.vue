@@ -38,8 +38,8 @@ export default class BaseTextarea extends Vue {
   width: 100%;
   height: 100px;
 
-  background: #dde3e8;
-  border: 1px solid #2f3676;
+  background: var(--background-secondary);
+  border: 1px solid var(--main-indigo);
   box-sizing: border-box;
   border-radius: 6px;
   resize: none;

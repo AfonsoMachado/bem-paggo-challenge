@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "@/assets/css/global.css";
+import "@/assets/css/colors.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 import VueSweetalert2 from "vue-sweetalert2";
 

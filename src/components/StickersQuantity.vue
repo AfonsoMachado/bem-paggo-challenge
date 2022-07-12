@@ -83,7 +83,7 @@ export default class StickersQuantity extends Vue {
   margin: 0 7px;
   width: 50px;
   border-radius: 8px;
-  border: 1px solid #2f3676;
+  border: 1px solid var(--main-indigo);
 }
 
 .stickers-quantity-content img {

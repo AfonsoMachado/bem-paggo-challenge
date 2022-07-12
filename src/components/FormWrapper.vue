@@ -16,7 +16,7 @@ export default class FormWrapper extends Vue {}
   width: 40%;
   height: 100%;
 
-  background-color: #f2f2f2;
+  background-color: var(--background-primary);
   border-radius: 40px;
   margin-bottom: 30px;
 }

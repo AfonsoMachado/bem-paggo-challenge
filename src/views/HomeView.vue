@@ -7,12 +7,13 @@
       @click="goRoRoute('/')"
     />
     <router-view />
-    <div class="to-purchase">
-      <BaseButton
-        class="to-purchase-btn"
-        v-if="currentRouteName === '/'"
-        @click="goRoRoute('/purchase')"
-      >
+    <div class="to-purchase" v-if="currentRouteName === '/'">
+      <div>
+        Seja bem vindo ao nosso sistema de compra de adesivos
+        <br />
+        Para efetuar sua compra clique no botão abaixo
+      </div>
+      <BaseButton class="to-purchase-btn" @click="goRoRoute('/purchase')">
         Comprar adesivos
       </BaseButton>
     </div>
@@ -64,7 +65,19 @@ export default class HomeView extends Vue {
   cursor: pointer;
 }
 
+.to-purchase {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  font-weight: 500;
+  font-size: 30px;
+}
+
 .to-purchase-btn {
+  margin-top: 10px;
   width: 200px;
 }
 </style>

@@ -24,13 +24,13 @@ export default class FormHeader extends Vue {}
 }
 
 .form-header {
-  background-color: #2f3676;
+  background-color: var(--main-indigo);
   border-radius: 40px 40px 0 0;
 
   height: 150px;
   padding: 0px 30px;
 
-  color: #fff;
+  color: var(--main-white);
   font-size: 24px;
 
   text-align: left;
