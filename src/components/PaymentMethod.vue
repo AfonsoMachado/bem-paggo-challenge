@@ -58,8 +58,6 @@ export default class PaymentMethod extends Vue {
 .payment-method-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-
   align-items: center;
 }
 

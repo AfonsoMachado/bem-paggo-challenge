@@ -1,9 +1,10 @@
 <template>
-  <div class="form-wrapper">
+  <FormWrapper>
     <FormHeader>
       <template v-slot:title>Formulário para compra de</template>
       <template v-slot:subtitle>pacote de adesivos</template>
     </FormHeader>
+
     <div class="form-content">
       <BaseCheckboxGroup @check="checkSticker" :title="'Quais adesivos:'" />
       <StickersQuantity
@@ -24,7 +25,7 @@
     <SubmitFooter :page="'purchase'">
       <BaseButton class="send-data-btn" @click="sendData"> Enviar </BaseButton>
     </SubmitFooter>
-  </div>
+  </FormWrapper>
 </template>
 
 <script lang="ts">
@@ -37,6 +38,7 @@ import PaymentMethod from "@/components/PaymentMethod.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import SubmitFooter from "@/components/SubmitFooter.vue";
 import FormHeader from "@/components/FormHeader.vue";
+import FormWrapper from "@/components/FormWrapper.vue";
 
 import { SelectOption } from "@/types/SelectOption";
 import { PurchaseData } from "@/types/PurchaseData";
@@ -52,6 +54,7 @@ const StickersStore = namespace("StickersStore");
     BaseButton,
     SubmitFooter,
     FormHeader,
+    FormWrapper,
   },
 })
 export default class PurchaseForm extends Vue {
@@ -113,23 +116,4 @@ export default class PurchaseForm extends Vue {
 }
 </script>
 
-<style scoped>
-.form-wrapper {
-  width: 40%;
-  height: 100%;
-
-  background-color: #f2f2f2;
-  border-radius: 40px;
-  margin-bottom: 30px;
-}
-
-.form-content {
-  padding: 30px 30px 0 30px;
-}
-
-@media screen and (max-width: 767px) {
-  .form-wrapper {
-    width: 90%;
-  }
-}
-</style>
+<style scoped></style>
