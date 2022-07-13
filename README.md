@@ -54,6 +54,15 @@ npm run test:unit
 npm run test:e2e
 ```
 
+## :white_check_mark: Resultado
+<p align="center">
+<img style="width:50%;" src="https://github.com/AfonsoMachado/bem-paggo-challenge/blob/master/.github/checkout.png" alt="" />
+</p>
+
+## :up: Deploy
+
+Com a finalidade de realizar testes, foi realizado o deploy deste projeto usando o <a target="_blank" href="https://vercel.com/">Vercel</a>. O mesmo pode ser acessado através da URL: https://bem-paggo-challenge.vercel.app/
+
 ---
 
 <p align="center">Feito com 💜 por <strong><a href="https://www.linkedin.com/in/AfonsoMachado/">Afonso Machado</a> 🥰 </strong> </p>
