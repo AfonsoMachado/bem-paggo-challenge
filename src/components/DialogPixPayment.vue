@@ -1,10 +1,15 @@
 <template>
   <BaseCard @close="$emit('close')" :title="`Pix`">
     <template v-slot:content>
-      <span>Leia o código abaixo para efetuar o pagamento via pix</span>
-      <br />
       <div class="pix-form-content">
+        <span>Leia o código abaixo para efetuar o pagamento via pix</span>
+        <br />
         <img src="../assets/img/pix-qr.png" alt="" />
+      </div>
+      <div class="base-card-footer">
+        <div class="button-pay-wrapper">
+          <BaseButton class="to-purchase-btn"> Confirmar Pagamento </BaseButton>
+        </div>
       </div>
     </template>
   </BaseCard>
@@ -28,7 +33,6 @@ export default class DialogBankSlipPayment extends Vue {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .pix-form-content img {

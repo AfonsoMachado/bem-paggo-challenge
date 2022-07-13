@@ -6,6 +6,7 @@
       :class="{ 'is-invalid': hasError }"
       :type="type"
       :value="value"
+      :maxlength="maxLength"
       v-bind="$attrs"
       @input="$emit('update:value', $event.target.value)"
     />
@@ -21,6 +22,7 @@ export default class BaseInput extends Vue {
   @Prop({ default: "text" }) readonly type!: string;
   @Prop() value!: string;
   @Prop({ default: false }) hasError?: boolean;
+  @Prop({ default: 1000 }) maxLength?: string;
 }
 </script>
 

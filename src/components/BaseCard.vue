@@ -9,11 +9,6 @@
       </div>
     </div>
     <slot name="content"></slot>
-    <div class="base-card-footer">
-      <div class="button-pay-wrapper">
-        <BaseButton class="to-purchase-btn"> Confirmar Pagamento </BaseButton>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -65,7 +60,7 @@ export default class BaseCard extends Vue {
 }
 
 .base-card-footer > * {
-  padding: 10px 0;
+  padding-top: 10px;
 }
 
 .button-pay-wrapper {
