@@ -8,7 +8,9 @@
       </div>
       <div class="base-card-footer">
         <div class="button-pay-wrapper">
-          <BaseButton class="to-purchase-btn"> Confirmar Pagamento </BaseButton>
+          <BaseButton class="to-purchase-btn" @click="confirmPayment">
+            Confirmar Pagamento
+          </BaseButton>
         </div>
       </div>
     </template>
@@ -24,6 +26,11 @@ import BaseInput from "@/components/BaseInput.vue";
 @Component({ components: { BaseCard, BaseButton, BaseInput } })
 export default class DialogBankSlipPayment extends Vue {
   @Prop() title?: string;
+
+  confirmPayment(): void {
+    this.$emit("close");
+    this.$router.push("/thanks");
+  }
 }
 </script>
 
