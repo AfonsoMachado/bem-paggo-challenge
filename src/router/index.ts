@@ -18,7 +18,11 @@ const routes: Array<RouteConfig> = [
       {
         path: "/checkout",
         name: "checkout",
-        beforeEnter: (to: Route, from: Route, next: any) => {
+        beforeEnter: (
+          to: Route,
+          from: Route,
+          next: (route?: string) => void
+        ) => {
           if (
             from.name !== "purchase" &&
             !store.getters["StickersStore/validStore"]
