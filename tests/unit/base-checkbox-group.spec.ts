@@ -17,7 +17,6 @@ const mockCheckboxGroup = {
 
 describe("BaseCheckboxGroup.vue", () => {
   const wrapper = mount(BaseCheckboxGroup, mockCheckboxGroup);
-  console.log(wrapper.html());
   test("does a wrapper exist", () => {
     expect(wrapper.exists()).toBe(true);
   });

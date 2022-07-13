@@ -4,8 +4,10 @@ import router from "./router";
 import store from "./store";
 import "@/assets/css/global.css";
 import "@/assets/css/colors.css";
+import "@/assets/css/modal.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 import VueSweetalert2 from "vue-sweetalert2";
+import VModal from "vue-js-modal";
 
 Vue.config.productionTip = false;
 
@@ -14,6 +16,7 @@ const sweetAlertOptions = {
   confirmButtonText: "OK",
 };
 
+Vue.use(VModal);
 Vue.use(VueSweetalert2, sweetAlertOptions);
 
 new Vue({
