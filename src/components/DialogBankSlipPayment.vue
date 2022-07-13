@@ -34,6 +34,11 @@ export default class DialogBankSlipPayment extends Vue {
   copyToClipboard(): void {
     const copyText = document.getElementById("bank-slip-number") as HTMLElement;
     navigator.clipboard.writeText(copyText.innerHTML);
+
+    this.$swal.fire({
+      title: "Código copiado para a área de transferência",
+      icon: "success",
+    });
   }
 
   confirmPayment(): void {
