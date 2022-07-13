@@ -27,6 +27,12 @@
       </span>
     </div>
     <div class="checkout-page-content-body-item payment">
+      <span class="checkout-page-content-body-item-title"> Valor total: </span>
+      <span class="checkout-page-content-body-item-value payment">
+        {{ totalPrice }}
+      </span>
+    </div>
+    <div class="checkout-page-content-body-item payment">
       <span class="checkout-page-content-body-item-title">
         Forma de pagamento:
       </span>
@@ -48,10 +54,24 @@ import { namespace } from "vuex-class";
 
 const StickersStore = namespace("StickersStore");
 
+const pricePerSticker = 1.5;
+
 @Component
 export default class CheckoutData extends Vue {
   @StickersStore.Getter
   private purchase!: PurchaseData;
+
+  get totalPrice(): string {
+    const totalPrice =
+      this.purchase.checkedStickers.length *
+      this.purchase.stickersQuantity *
+      pricePerSticker;
+
+    return totalPrice.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
 }
 </script>
 
