@@ -22,7 +22,7 @@ Projeto desenvolvido no período de 08/07/2022 a 13/07/2022 como desafio de impl
 
 ## :fire: Instalação
 
-Para instalar e executar o software localmente, é necessário ter um ambiente NodeJS ou Yarn instalado em sua máquina, além do MongoDB e PostgreSQL instalado.
+Para instalar e executar o software localmente, é necessário ter um ambiente NodeJS ou Yarn instalado em sua máquina.
 
 ### Clonando o repositório:
 
