@@ -5,10 +5,9 @@
       class="base-input form-control"
       :class="{ 'is-invalid': hasError }"
       :type="type"
-      :value="value"
       :maxlength="maxLength"
       v-bind="$attrs"
-      @input="$emit('update:value', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -20,7 +19,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class BaseInput extends Vue {
   @Prop({ default: "" }) readonly label!: string;
   @Prop({ default: "text" }) readonly type!: string;
-  @Prop() value!: string;
   @Prop({ default: false }) hasError?: boolean;
   @Prop({ default: 1000 }) maxLength?: string;
 }

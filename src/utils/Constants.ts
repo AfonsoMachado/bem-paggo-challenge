@@ -14,6 +14,5 @@ export const PaymentMethods: SelectOption[] = [
   { label: "Boleto Bancário", value: "boleto" },
   { label: "Cartão de Crédito", value: "credit-card" },
   { label: "Cartão de Débito", value: "debit-card" },
-  { label: "PayPal", value: "paypal" },
   { label: "Pix", value: "pix" },
 ];
