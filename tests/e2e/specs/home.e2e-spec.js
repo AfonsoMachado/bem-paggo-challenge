@@ -1,6 +1,6 @@
 describe("home test", () => {
   it("test images visible", () => {
-    cy.visit("/checkout");
+    cy.visit("/");
     cy.get("img").should("be.visible");
   });
 });
