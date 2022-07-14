@@ -75,5 +75,6 @@ export default class DialogBankSlipPayment extends Vue {
   padding-top: 10px;
   margin: 10px 0;
   font-family: sans-serif;
+  text-align: center;
 }
 </style>

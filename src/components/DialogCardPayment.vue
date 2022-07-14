@@ -18,7 +18,7 @@
             v-model="cardData.expiration"
           ></BaseInput>
           <BaseInput
-            :label="'Código de segurança'"
+            :label="'CVV'"
             :maxLength="'3'"
             v-model="cardData.cvv"
           ></BaseInput>
