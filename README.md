@@ -12,6 +12,7 @@ Projeto desenvolvido no período de 08/07/2022 a 13/07/2022 como desafio de impl
  <li><a href="https://github.com/cypress-io/cypress">Cypress</a></li>
  <li><a href="https://jestjs.io/">Jest</a></li>
  <li><a href="https://avil13.github.io/vue-sweetalert2/">vue-sweetalert2</a></li>
+ <li><a href="https://github.com/euvl/vue-js-modal#readme">Vue.js modal</a></li>
  <li><a href="https://github.com/kaorun343/vue-property-decorator#readme">Vue Property Decorator
 </a></li>
  <li><a href="https://github.com/vuejs/vue-class-component#readme">Vue Class Component
