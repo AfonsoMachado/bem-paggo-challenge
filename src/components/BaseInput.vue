@@ -1,9 +1,8 @@
 <template>
   <div class="container-base-input">
-    <label class="form-label">{{ label }}</label>
+    <label>{{ label }}</label>
     <input
-      class="base-input form-control"
-      :class="{ 'is-invalid': hasError }"
+      class="base-input"
       :type="type"
       :maxlength="maxLength"
       v-bind="$attrs"
@@ -19,7 +18,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class BaseInput extends Vue {
   @Prop({ default: "" }) readonly label!: string;
   @Prop({ default: "text" }) readonly type!: string;
-  @Prop({ default: false }) hasError?: boolean;
   @Prop({ default: 1000 }) maxLength?: string;
 }
 </script>
