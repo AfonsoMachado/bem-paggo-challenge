@@ -140,6 +140,23 @@ describe("home test", () => {
     // Confirma a compra
     cy.get("button[class='send-data-btn']").contains("Comprar").click();
 
+    // Confirma o pagamento no dialog
+    cy.get(".to-purchase-btn").contains("Confirmar Pagamento").click();
+    // Campos não preenchidos
+    cy.contains("Preencha todos os campos necessários");
+    // Confirma aviso de campos não preenchidos
+    cy.get("button").contains("OK").click();
+
+    // Preenche os campos de input
+    cy.get("input[type='text']").eq(0).type("0000000000000000");
+    cy.get("input[type='text']").eq(1).type("Nome Teste");
+    cy.get("input[type='text']").eq(2).type("05/30");
+    cy.get("input[type='text']").eq(3).type("022");
+    cy.get("input[type='text']").eq(4).type("00000000000");
+
+    // Confirma o pagamento
+    cy.get(".to-purchase-btn").contains("Confirmar Pagamento").click();
+
     // Verifica se está na página de agradecimento
     cy.contains("Muito obrigado por sua compra!");
     // Clica no link de voltar para a página inicial
