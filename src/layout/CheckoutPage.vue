@@ -59,7 +59,7 @@ export default class CheckoutPage extends Vue {
         {
           name: "dialog-cancel-request",
           height: "auto",
-          // width: window.innerWidth >= 1000 ? "912px" : "80%",
+          width: window.innerWidth >= 1000 ? "600px" : "80%",
         }
       );
     } else if (this.purchase.paymentMethod?.value === "boleto") {
@@ -69,7 +69,7 @@ export default class CheckoutPage extends Vue {
         {
           name: "dialog-cancel-request",
           height: "auto",
-          // width: window.innerWidth >= 1000 ? "912px" : "80%",
+          width: window.innerWidth >= 1000 ? "600px" : "80%",
         }
       );
     } else if (this.purchase.paymentMethod?.value === "pix") {
@@ -79,7 +79,7 @@ export default class CheckoutPage extends Vue {
         {
           name: "dialog-cancel-request",
           height: "auto",
-          // width: window.innerWidth >= 1000 ? "912px" : "80%",
+          width: window.innerWidth >= 1000 ? "600px" : "80%",
         }
       );
     } else if (this.purchase.paymentMethod?.value === "debit-card") {
@@ -91,7 +91,7 @@ export default class CheckoutPage extends Vue {
         {
           name: "dialog-cancel-request",
           height: "auto",
-          // width: window.innerWidth >= 1000 ? "912px" : "80%",
+          width: window.innerWidth >= 1000 ? "600px" : "80%",
         }
       );
     }
